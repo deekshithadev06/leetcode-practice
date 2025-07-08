@@ -11,6 +11,11 @@ public:
                 remaining.push_back(words[j]);
             }
         }
+
+         if(remaining.empty()) {
+            answer.push_back(0);
+            continue;
+        }
         
         int max_count = 1;
         string max_word = remaining[0];
