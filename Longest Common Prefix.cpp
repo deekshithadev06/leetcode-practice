@@ -6,13 +6,13 @@ public:
     for (int i = 0; i < words.size(); ++i) {
         vector<string> remaining;
         
-        for(int j = 0; j < words.size(); ++j) {
-            if(j != i){
+        for (int j = 0; j < words.size(); ++j) {
+            if (j != i) {
                 remaining.push_back(words[j]);
             }
         }
 
-         if(remaining.empty()) {
+         if (remaining.empty()) {
             answer.push_back(0);
             continue;
         }
@@ -23,13 +23,13 @@ public:
         int curr_count = 1;
 
         for (int k = 1; k < remaining.size(); ++k) {
-            if(remaining[k] == remaining[k-1]) {
+            if (remaining[k] == remaining[k-1]) {
                 curr_count++;
             } else {
                 curr_count = 1;
             }
             
-            if(curr_count > max_count) {
+            if (curr_count > max_count) {
                 max_count = curr_count;
                 max_word = remaining[k];
                 tie = false;
@@ -38,7 +38,7 @@ public:
             }
         }
         
-        if(tie) {
+        if (tie) {
             answer.push_back(0);
         } else {
             answer.push_back(max_word.size());
